@@ -2,3 +2,7 @@
 
 export(myfun)
 export(myfun_add)
+export(timesTwo)
+import(Rcpp)
+importFrom(Rcpp,evalCpp)
+useDynLib(BarcodeMatcher)

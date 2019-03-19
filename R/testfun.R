@@ -1,3 +1,15 @@
+#' your_package
+#' 
+#' Description of your package
+#' 
+#' @docType package
+#' @author clintko 
+#' @import Rcpp
+#' @importFrom Rcpp evalCpp
+#' @useDynLib BarcodeMatcher
+#' @name BarcodeMatcher
+NULL  
+
 #' create an R function with the document. The document is copied from klutometis/roxygen
 #'
 #' @param x input numeric vector

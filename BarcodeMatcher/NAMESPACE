@@ -1,0 +1,3 @@
+useDynLib(BarcodeMatcher, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)

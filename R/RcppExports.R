@@ -2,6 +2,16 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @export
+cdist_str <- function(vec_str1, vec_str2) {
+    .Call('_BarcodeMatcher_cdist_str', PACKAGE = 'BarcodeMatcher', vec_str1, vec_str2)
+}
+
+#' @export
+dist_metric_hamming <- function(str1, str2) {
+    .Call('_BarcodeMatcher_dist_metric_hamming', PACKAGE = 'BarcodeMatcher', str1, str2)
+}
+
+#' @export
 timesTwo <- function(x) {
     .Call('_BarcodeMatcher_timesTwo', PACKAGE = 'BarcodeMatcher', x)
 }

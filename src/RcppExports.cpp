@@ -5,6 +5,30 @@
 
 using namespace Rcpp;
 
+// cdist_str
+NumericVector cdist_str(const StringVector& vec_str1, const StringVector& vec_str2);
+RcppExport SEXP _BarcodeMatcher_cdist_str(SEXP vec_str1SEXP, SEXP vec_str2SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const StringVector& >::type vec_str1(vec_str1SEXP);
+    Rcpp::traits::input_parameter< const StringVector& >::type vec_str2(vec_str2SEXP);
+    rcpp_result_gen = Rcpp::wrap(cdist_str(vec_str1, vec_str2));
+    return rcpp_result_gen;
+END_RCPP
+}
+// dist_metric_hamming
+int dist_metric_hamming(const std::string& str1, const std::string& str2);
+RcppExport SEXP _BarcodeMatcher_dist_metric_hamming(SEXP str1SEXP, SEXP str2SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type str1(str1SEXP);
+    Rcpp::traits::input_parameter< const std::string& >::type str2(str2SEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_metric_hamming(str1, str2));
+    return rcpp_result_gen;
+END_RCPP
+}
 // timesTwo
 NumericVector timesTwo(NumericVector x);
 RcppExport SEXP _BarcodeMatcher_timesTwo(SEXP xSEXP) {
@@ -18,6 +42,8 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_BarcodeMatcher_cdist_str", (DL_FUNC) &_BarcodeMatcher_cdist_str, 2},
+    {"_BarcodeMatcher_dist_metric_hamming", (DL_FUNC) &_BarcodeMatcher_dist_metric_hamming, 2},
     {"_BarcodeMatcher_timesTwo", (DL_FUNC) &_BarcodeMatcher_timesTwo, 1},
     {NULL, NULL, 0}
 };
